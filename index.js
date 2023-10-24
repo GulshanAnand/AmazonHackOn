@@ -21,7 +21,7 @@ app.post('/api', async (req, res) => {
     try {
         const response = await openai.chat.completions.create({
           messages: [
-            { role: 'system', content: req.body.prompt }
+            { role: 'system', content: req.body.prompt + "\n convert this to a useful query to get relevant results from amazon shopping website" }
           ],
           model: 'gpt-3.5-turbo',
         });
